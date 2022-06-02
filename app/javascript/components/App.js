@@ -76,8 +76,7 @@ const App = () => {
 
     const fetchData = () => {
         if (data.length === 0){
-            axios.get('/api/v1/data.json')
-        .then(resp => {
+            axios.get('/api/v1/data.json').then(resp => {
             setData(resp.data.data)
         })
         .catch(resp => console.log(resp))
@@ -112,6 +111,7 @@ const App = () => {
     const customerList = data.map(item => {
         return item.attributes.customer_id
      })
+     
  
     const customerFilteredNumber = customerList.filter(function(item, pos){
         return customerList.indexOf(item)== pos; 
